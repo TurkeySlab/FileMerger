@@ -10,7 +10,6 @@ public class Merge {
 	private String folderA;
 	private String folderB;
 	private boolean isADone = false;	// when true, merge() switches then to B 
-	private int uniqueNum = 1;			// lazy counter
 	
 	
 	public Merge( String dir )
@@ -52,13 +51,20 @@ public class Merge {
 		            
 		            Path from    = Paths.get(toMove.getAbsolutePath());
 		            // TODO get FS syntax 
-		            String nativeNumber = toMove.toString().substring(0, toMove.toString().lastIndexOf('.')); // DCSM - 000.png
+		            String toMoveStr = toMove.toString();
+		            String nativeNumber = "";
 		            
+		            try {
+		            	nativeNumber = toMoveStr.substring(toMoveStr.indexOf('_'), toMoveStr.lastIndexOf('.')); // DCSM - 000.png
+		            } catch (Exception e) {
+		            	nativeNumber = toMoveStr.substring(toMoveStr.indexOf('.') - 4, toMoveStr.lastIndexOf('.'));
+		            }
 		            
-		            Path newDir  = Paths.get(this.destination + "\\" + dateTaken + (this.uniqueNum++) + getExtension(from.toString()));
+		            Path newDir  = Paths.get(this.destination + "\\" + dateTaken + (nativeNumber) + getExtension(from.toString()));
 
 		            System.out.println(from.toString());
 		            System.out.println(newDir.toString());
+		            
 		            Files.move(from, newDir, StandardCopyOption.REPLACE_EXISTING);
  		        }
 		        this.isADone = !this.isADone;		// flips the A|B switch 

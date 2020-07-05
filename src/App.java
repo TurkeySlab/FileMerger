@@ -51,7 +51,7 @@ public class App extends JFrame {
 		
 		String dir = "";
 		try {
-			 dir = new File(App.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getPath();
+			dir = new File(App.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getPath();
 			System.out.println(dir);
 		} catch (URISyntaxException e) {
 			// uhhh 
