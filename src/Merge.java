@@ -51,6 +51,10 @@ public class Merge {
 		            
 		            
 		            Path from    = Paths.get(toMove.getAbsolutePath());
+		            // TODO get FS syntax 
+		            String nativeNumber = toMove.toString().substring(0, toMove.toString().lastIndexOf('.')); // DCSM - 000.png
+		            
+		            
 		            Path newDir  = Paths.get(this.destination + "\\" + dateTaken + (this.uniqueNum++) + getExtension(from.toString()));
 
 		            System.out.println(from.toString());

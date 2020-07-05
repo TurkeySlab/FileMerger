@@ -22,7 +22,7 @@ O-------------------------------------------------------------------------------
 |.........|            3) Click 'Do it' button                                                                       |.........|
 |.........|                 - Files will be renamed to <date modified> + <uniqueNum> + .<extension>                  |.........|
 |.........|                                                                                                          |.........|
-|.........|  @Misc   : Designed to fix file saving issues for cameras (namely Nikon X8500) where files are           |.........|
+|.........|  @Misc   : Designed to fix file saving issues for cameras (namely Nikon D3500) where files are           |.........|
 |.........|            divided into folders by <999 - 9999> total shutter clicks, and not uniquly named              |.........|
 |.........|            outside of the unique sub-folders.                                                            |.........|
 |.........|                                                                                                          |.........|
